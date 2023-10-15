@@ -25,10 +25,12 @@ function App() {
   
   return (
     <>
-
+     <div stle={{display:"grid"}}>
       <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart}/>
-      <Menu menu={menu} addToCart={addToCart} />
-
+      <hr style={{backgroundColor:"red"}}></hr>
+      <div style={{border:"1px solid steelblue",margin:"2.3em",borderRadius:".77em"}}><Menu menu={menu} addToCart={addToCart} /></div>
+      
+    </div>
     </>
   );
 };

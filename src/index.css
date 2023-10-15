@@ -12,9 +12,9 @@ body {
   --background-color: rgba(223, 238, 17, 0.3);
   --background-color: white;
   --background-color: aliceblue;
-  --color: white;
-  --color: alieblue;
-  --color: steelblue;
+  --color-white: white;
+  --color-alice: alieblue;
+  --color-steelb: steelblue;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -63,11 +63,11 @@ code {
   align-self: center;
   text-align: center;
   text-shadow: 2px 2px 4px #000000;
-  color: var(--color);
+  color:var(--color-white);
   letter-spacing: 5px;
   animation-name: displayProwess;
   animation-duration: 2s;
-  animation-delay: -2s;
+  animation-delay: 2s;
   animation-direction: alternate-reverse;
   animation-timing-function:ease-in-out;
   animation-iteration-count:calc(2)
@@ -81,12 +81,14 @@ code {
   float: right;
   margin-right: 3em;
   margin-bottom: 0;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .trolley {
   float: right;
   background-color: rgb(247, 243, 243);
   max-width: 15%;
+  margin: 2em;
   margin-left: 5%;
   border-top-left-radius: .97em;
   border-bottom-right-radius: .97em;
@@ -95,6 +97,8 @@ code {
   margin-top: 0;
   cursor: pointer;
   color:rgb(108, 179, 241);
+  Text-shadow: 1px 1px 2px black, 0 0 15px orange, 0 0 3px yellow;
+  font-size: bold;
 }
 .trolley > li {
   margin-top: 0;
@@ -182,7 +186,7 @@ h3 {
   }
 }
 
-@media  screen and (max-width: 380px) {
+@media  screen and (max-width: 430px) {
   .container {
     grid-template-columns: 1fr;
     margin-left: 10%;
@@ -190,6 +194,7 @@ h3 {
   .trolley {
     max-width: 100%;
   }
+ 
 }
 
   
