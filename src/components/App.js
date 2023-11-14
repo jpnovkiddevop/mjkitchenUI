@@ -1,38 +1,51 @@
 import React, { useState } from "react";
-import data from "./data";
+import { data } from "./data";
 import Menu from "./Menu";
 import Cart from "./Cart";
+import Navbar from "./Navbar";
+import Welcome from "./Welcome";
+import Footer from "./Footer";
 
+const KitchenContext = React.createContext();
 
 function App() {
-  const [menu, setMenu] = useState(data)
-  const [cart, setCart] = useState([])
-
-  console.log(setMenu)
-
+  const [menu, setMenu] = useState(data);
+  const [cart, setCart] = useState([]);
+  console.log(setMenu);
   const addToCart = (item) => {
     setCart([...cart, item]);
   }
 
   const removeFromCart = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id)
-    return setCart([...updatedCart])
+    const updateCart = cart.filter((cartItem) => cartItem.id !== item.id);
+    setCart(updateCart);
   }
 
   const clearCart = () => {
-    setCart([])
+    setCart([]);
   }
-  
+
   return (
-    <>
-     <div stle={{display:"grid"}}>
-      <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart}/>
-      <hr style={{backgroundColor:"red"}}></hr>
-      <div style={{border:"1px solid steelblue",margin:"2.3em",borderRadius:".77em"}}><Menu menu={menu} addToCart={addToCart} /></div>
-      
-    </div>
-    </>
+    <KitchenContext.Provider value={{ clearCart, removeFromCart, cart, addToCart, menu }}>
+      <Navbar />  
+      <Welcome />
+      {cart.length > 0 && <Cart />}
+      <Menu />
+    </KitchenContext.Provider>
   );
-};
+}
+
+export function useKitchenContext() {
+  return React.useContext(KitchenContext);
+}
 
 export default App;
+
+
+
+
+
+
+
+
+
