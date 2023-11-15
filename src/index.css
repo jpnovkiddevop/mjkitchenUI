@@ -204,7 +204,7 @@ button svg {
 
 /* Style for the "Clear Cart" button */
 .btn {
-  background-color: #007bff;
+  background-color: #2323f5;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -258,7 +258,7 @@ button svg {
 
 .welcome:hover {
   color: white;
-  text-shadow: 2px 2px 4px #000, 0 0 25px purple, 0 0 5px navy;
+  text-shadow: 2px 2px 4px #000, 0 0 25px goldenrod, 0 0 5px silver;
 }
 
 .menu-details > img {
@@ -267,18 +267,6 @@ button svg {
   border-radius: 10%;
 }
 
-.footer {
-  background-color: burlywood;
-  color: blue;
-  max-height: 2em;
-  display: flex;
-  
-}
-
-.footer > li {
-  list-style: none;
-  display: flex;
-}
 
 a {
   text-decoration: none;
@@ -306,4 +294,8 @@ li > a {
 
 .footer > p {
   margin-right: 3em;
+}
+
+.center {
+  margin: 0 auto;
 }
