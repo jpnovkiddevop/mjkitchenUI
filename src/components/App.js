@@ -15,6 +15,7 @@ function App() {
   const [menu, setMenu] = useState(data);
   const [cart, setCart] = useState([]);
   const [loyals, setLoyals] = useState(false)
+
   const addToCart = (item) => {
     setCart([...cart, item]);
   }
@@ -28,21 +29,23 @@ function App() {
     setCart([]);
   }
 
+  const menuClass = loyals || cart.length > 0 ? "menu-items2":"menu-items"
+
   return (
 
     
-      <KitchenContext.Provider value={{ clearCart, removeFromCart, cart, addToCart, menu }}>
+      <KitchenContext.Provider value={{ clearCart, removeFromCart, cart, addToCart, menu , menuClass}}>
 
         <Navbar />  
 
-        <section className="container">
+        <section className="container myContainer">
           <Welcome />
           <button onClick={() => setLoyals(!loyals)} className="btn-loyals btn-sm">toggle loyals</button>
           {loyals && <Fetch/>}
           {cart.length > 0 && <Cart />}
           <Menu />
-          <Footer />
         </section>
+        <Footer />
 
       </KitchenContext.Provider>
 

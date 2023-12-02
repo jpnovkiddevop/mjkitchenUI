@@ -2,13 +2,13 @@ import React from "react";
 import { useKitchenContext } from "./App";
 
 export default function Menu() {
-  const {menu, addToCart} = useKitchenContext()
+  const {menu, addToCart, menuClass} = useKitchenContext()
   return (
     <div className="menu-container">
       <span>
         <h2 className="menu--title">Menu</h2>
       </span>
-      <div className="menu-items">
+      <div className={menuClass}>
         {menu.map((item) => (
           <div key={item.id} className="menu-item">
             <div className="menu-details">
